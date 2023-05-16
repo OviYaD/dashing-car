@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "My Font";
+    src: url("../fonts/ARCADE.TTF");
+  }
+  
+  * {
+    font-family: "My Font", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-image: url("../assets/bg.jpg");
+    background-size: cover;
+    backdrop-filter: blur(5px);
+  }
+  #game {
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+    position: relative;
+  }
+
+  canvas {
+    position: absolute;
+    top: 0;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .road {
+    width: 450px;
+    height: 100vh;
+    background-color: black;
+    margin: auto;
+    position: relative;
+    border-left: 7px dashed white;
+    border-right: 7px dashed white;
+  }

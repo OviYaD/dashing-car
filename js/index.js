@@ -154,14 +154,14 @@ loadAudiosSync(audioUrls)
           const lineContainer = new PIXI.Container();
           const scoreContainer = new PIXI.Container();
           scoreContainer.position.set(20, 20);
-          const highScoreText = new PIXI.Text(
-            "High Score : " + localStorage.getItem("highScore"),
-            {
-              fontFamily: "My Font",
-              fontSize: 24,
-              fill: 0xffffff,
-            }
-          );
+          const hs = localStorage.getItem("highScore")
+            ? localStorage.getItem("highScore")
+            : 0;
+          const highScoreText = new PIXI.Text("High Score : " + hs, {
+            fontFamily: "My Font",
+            fontSize: 24,
+            fill: 0xffffff,
+          });
           const timerText = new PIXI.Text("Time: 0", {
             fontFamily: "My Font",
             fontSize: 24,
@@ -188,7 +188,7 @@ loadAudiosSync(audioUrls)
           let lastTime = performance.now();
 
           let player = {
-            step: 10,
+            step: 8,
             x: 0,
             y: 0,
             start: false,
